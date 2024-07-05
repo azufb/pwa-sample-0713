@@ -13,10 +13,14 @@ root.render(
   </React.StrictMode>
 );
 
+console.log("process.env.PUBLIC_URL", process.env.PUBLIC_URL);
+
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("serviceWorker.js").then((registration) => {
-    console.log("Service Worker Registered");
-  });
+  navigator.serviceWorker
+    .register(`${process.env.PUBLIC_URL}/serviceWorker.js`)
+    .then((registration) => {
+      console.log("Service Worker Registered");
+    });
   navigator.serviceWorker.ready.then((registration) => {
     console.log("Service Worker Ready!");
   });
