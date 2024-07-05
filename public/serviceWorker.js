@@ -1,4 +1,4 @@
-const cacheName = "pwa-sample-0713-v7";
+const cacheName = "pwa-sample-0713-v8";
 
 // キャッシュするファイル
 const appShellFiles = [
@@ -9,7 +9,7 @@ const appShellFiles = [
   "**.png",
 ];
 
-window.addEventListener("install", (e) => {
+this.self.addEventListener("install", (e) => {
   console.log("[Service Worker] Install");
 
   // 以下のコードが実行されるまでインストールされない
@@ -21,7 +21,7 @@ window.addEventListener("install", (e) => {
   );
 });
 
-window.addEventListener("fetch", function (event) {
+this.self.addEventListener("fetch", function (event) {
   event.respondWith(
     caches.match(event.request).then(function (response) {
       return response ? response : fetch(event.request);
