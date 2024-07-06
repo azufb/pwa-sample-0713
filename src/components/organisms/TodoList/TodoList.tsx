@@ -30,14 +30,15 @@ export function TodoList({ todoList, setTodoList }: TodoListProps) {
     Notification.requestPermission().then((result) => {
       if (result === "granted") {
         const title = "ToDoが削除されました";
-        const bodyMessage: string = `${deleteTodo.title}が削除されました`;
-        const options = {
-          body: bodyMessage,
-        };
 
-        return new Notification(title, options);
+        return new Notification(title);
       }
     });
+
+    if (Notification.permission === "granted") {
+      console.log("aaa");
+      new Notification("aaa");
+    }
   };
 
   /**
