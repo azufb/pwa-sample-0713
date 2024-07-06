@@ -15,6 +15,7 @@ export function TodoList({ todoList, setTodoList }: TodoListProps) {
    * Todo削除
    */
   const deleteItem = (id: number): void => {
+    const deleteTodo: TodoItem = todoList[id];
     const deletedTodoList: TodoItem[] = todoList.filter(
       (_, index) => index !== id
     );
@@ -24,6 +25,19 @@ export function TodoList({ todoList, setTodoList }: TodoListProps) {
     setTodoList(deletedTodoList);
 
     setIsOpen(false);
+
+    // Push通知
+    Notification.requestPermission().then((result) => {
+      if (result === "granted") {
+        const title = "ToDoが削除されました";
+        const bodyMessage: string = `${deleteTodo.title}が削除されました`;
+        const options = {
+          body: bodyMessage,
+        };
+
+        return new Notification(title, options);
+      }
+    });
   };
 
   /**
