@@ -1,4 +1,4 @@
-const cacheName = "pwa-sample-0713-v12";
+const cacheName = "pwa-sample-0713-v13";
 
 // キャッシュするファイル
 const appShellFiles = [
@@ -30,5 +30,7 @@ this.self.addEventListener("fetch", function (event) {
 });
 
 this.self.addEventListener("message", (event) => {
+  alert(event.data);
+  console.log(event.data);
   this.self.registration.showNotification(event.data);
 });
