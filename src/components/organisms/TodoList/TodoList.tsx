@@ -26,11 +26,10 @@ export function TodoList({ todoList, setTodoList }: TodoListProps) {
 
     setIsOpen(false);
 
-    alert(navigator.serviceWorker.ready);
-
     if (Notification.permission === "granted") {
       alert("通知可能");
       if ("serviceWorker" in navigator) {
+        alert("有効");
         // navigator.serviceWorker.ready.then((registration) => {
         //   alert("Service Workerが有効");
         //   console.log("Service Workerが有効");
