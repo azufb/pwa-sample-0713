@@ -28,7 +28,9 @@ export function TodoList({ todoList, setTodoList }: TodoListProps) {
 
     if (Notification.permission === "granted") {
       console.log("aaa");
-      new Notification(deleteTodo.title);
+      navigator.serviceWorker.ready.then((registration) => {
+        registration.active?.postMessage("削除されました！");
+      });
     }
   };
 
