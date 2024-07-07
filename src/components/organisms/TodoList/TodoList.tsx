@@ -26,10 +26,17 @@ export function TodoList({ todoList, setTodoList }: TodoListProps) {
 
     setIsOpen(false);
 
+    alert(Notification.permission);
+
     if (Notification.permission === "granted") {
-      console.log("aaa");
+      alert("通知可能");
       navigator.serviceWorker.ready.then((registration) => {
-        registration.active?.postMessage("削除されました！");
+        alert(registration.active);
+        if (registration.active) {
+          registration.active.postMessage("hello!");
+        } else {
+          console.log("registration not active");
+        }
       });
     }
   };
