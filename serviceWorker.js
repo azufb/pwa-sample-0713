@@ -1,13 +1,7 @@
-const cacheName = "pwa-sample-0713-v13";
+const cacheName = "pwa-sample-0713-v14";
 
 // キャッシュするファイル
-const appShellFiles = [
-  "index.html",
-  "index.tsx",
-  "App.tsx",
-  "index.css",
-  "**.png",
-];
+const appShellFiles = ["/", "index.html"];
 
 this.self.addEventListener("install", (e) => {
   console.log("[Service Worker] Install");
