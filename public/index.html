@@ -42,7 +42,7 @@
     <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
-          .register("/pwa-sample-0713/serviceWorker.js")
+          .register("../src/serviceWorker.js", { scope: "/" })
           .then((registration) => {
             console.log("Service Worker Registered");
           });
