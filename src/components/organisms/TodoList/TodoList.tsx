@@ -26,18 +26,9 @@ export function TodoList({ todoList, setTodoList }: TodoListProps) {
 
     setIsOpen(false);
 
-    // Push通知
-    Notification.requestPermission().then((result) => {
-      if (result === "granted") {
-        const title = "ToDoが削除されました";
-
-        return new Notification(title);
-      }
-    });
-
     if (Notification.permission === "granted") {
       console.log("aaa");
-      new Notification("aaa");
+      new Notification(deleteTodo.title);
     }
   };
 
