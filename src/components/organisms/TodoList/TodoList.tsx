@@ -31,11 +31,11 @@ export function TodoList({ todoList, setTodoList }: TodoListProps) {
     if (Notification.permission === "granted") {
       alert("通知可能");
       if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.ready.then((registration) => {
-          alert("Service Workerが有効");
-          console.log("Service Workerが有効");
-          registration.active?.postMessage("test");
-        });
+        // navigator.serviceWorker.ready.then((registration) => {
+        //   alert("Service Workerが有効");
+        //   console.log("Service Workerが有効");
+        // });
+        navigator.serviceWorker.controller?.postMessage("test");
       } else {
         alert("無効");
       }
