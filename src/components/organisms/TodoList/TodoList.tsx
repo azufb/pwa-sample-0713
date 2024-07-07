@@ -31,11 +31,11 @@ export function TodoList({ todoList, setTodoList }: TodoListProps) {
     if (Notification.permission === "granted") {
       alert("通知可能");
       navigator.serviceWorker.ready.then((registration) => {
-        alert(registration.active);
+        alert(registration);
         if (registration.active) {
           registration.active.postMessage("hello!");
         } else {
-          console.log("registration not active");
+          alert("registration not active");
         }
       });
     }
