@@ -42,7 +42,7 @@
     <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
-          .register("%PUBLIC_URL%/serviceWorker.js", { scope: "/" })
+          .register("%PUBLIC_URL%/serviceWorker.js")
           .then((registration) => {
             console.log("Service Worker Registered");
           });
