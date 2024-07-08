@@ -48,6 +48,7 @@
           });
         navigator.serviceWorker.ready.then((registration) => {
           console.log("Service Worker Ready!");
+          registration.active.postMessage("インストールされました！");
         });
       }
     </script>
