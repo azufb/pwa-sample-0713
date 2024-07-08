@@ -3,6 +3,9 @@ const cacheName = "pwa-sample-0713-v14";
 // キャッシュするファイル
 const appShellFiles = ["/", "index.html"];
 
+// eslint-disable-next-line no-restricted-globals
+const ignored = self.__WEB_MANIFEST;
+
 this.self.addEventListener("install", (e) => {
   console.log("[Service Worker] Install");
 

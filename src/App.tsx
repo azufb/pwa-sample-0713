@@ -10,6 +10,17 @@ function App() {
   const [todoList, setTodoList] = useState<TodoItem[]>(parsedTodos);
 
   useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("./serviceWorker.js")
+        .then((registration) => {
+          console.log("Service Worker Registered");
+        });
+      navigator.serviceWorker.ready.then((registration) => {
+        console.log("Service Worker Ready!");
+      });
+    }
+
     // 通知の許可をとる
     if (Notification.permission !== "denied") {
       Notification.requestPermission();

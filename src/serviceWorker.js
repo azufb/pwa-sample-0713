@@ -1,4 +1,4 @@
-const cacheName = "pwa-sample-0713-v15";
+const cacheName = "pwa-sample-0713-v16";
 
 // キャッシュするファイル
 const appShellFiles = ["/", "index.html", "index.tsx", "App.tsx", "index.css"];
