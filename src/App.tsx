@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="px-4">
-      <h1 className="text-center my-6 font-bold text-3xl">PWA TODO</h1>
+      <h1 className="text-center my-6 font-bold text-3xl">PWA TODO SAMPLE</h1>
       {/** Todo登録フォーム */}
       <RegisterTodo setTodoList={setTodoList} />
 
